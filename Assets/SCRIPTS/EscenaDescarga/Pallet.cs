@@ -38,20 +38,20 @@ public class Pallet : MonoBehaviour
 					EnSmoot = false;
 					TempoSmoot = 0;
 				}
-				else
-				{
-					if(Portador.GetComponent<ManoRecept>() != null)
-						transform.position = Portador.transform.position - Vector3.up * 1.2f;
-					else
-						transform.position = Vector3.Lerp(transform.position, Portador.transform.position, T.GetDT() * 10);
-				}
+				//else
+				//{
+				//	if(Portador.GetComponent<ManoRecept>() != null)
+				//		transform.position = Portador.transform.position - Vector3.up * 1.2f;
+				//	else
+				//		transform.position = Vector3.Lerp(transform.position, Portador.transform.position, T.GetDT() * 10);
+				//}
 				
 			}
 			else
 			{
-				if(Portador.GetComponent<ManoRecept>() != null)
-					transform.position = Portador.transform.position - Vector3.up * 1.2f;
-				else
+				//if(Portador.GetComponent<ManoRecept>() != null)
+				//	transform.position = Portador.transform.position - Vector3.up * 1.2f;
+				//else
 					transform.position = Portador.transform.position;
 					
 			}
