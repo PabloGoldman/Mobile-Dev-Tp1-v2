@@ -929,6 +929,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8eb2f7ac3a2f224db356334178a4783, type: 3}
+--- !u!1 &1233634605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 583937395477034727, guid: d49c83f766033aa41a6e4cc31c1398b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 1748361060}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1239178089
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,7 +1297,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1233634605}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -1359,7 +1365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e05dd45e239b08b42a307308f2088a5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  creditsText: {fileID: 4900000, guid: 76ead8bd89a38064e87a2b08fa7467e0, type: 3}
+  creditsText: {fileID: 4900000, guid: 93c4f903c0199334ba1d9e7974236865, type: 3}
 --- !u!1001 &1748361060
 PrefabInstance:
   m_ObjectHideFlags: 0
