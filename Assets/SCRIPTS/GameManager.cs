@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instancia;
 
+    [SerializeField] GameModeData gameData;
+
     public float TiempoDeJuego = 60;
 
     public enum EstadoJuego { Calibrando, Jugando, Finalizado }

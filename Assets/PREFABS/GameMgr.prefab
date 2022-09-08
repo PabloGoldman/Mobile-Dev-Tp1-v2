@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2084743329156736401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2084743329156739564}
+  - component: {fileID: 2084743329156733584}
+  - component: {fileID: 2084743329156733410}
+  m_Layer: 0
+  m_Name: GameMgr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2084743329156739564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084743329156736401}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -25.061218, y: 40.98424, z: 1.6227722}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2084743329156733584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084743329156736401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c8ccfbee54199948923d8705f53aea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: 77b1cf5c80018ee47a9586ee291ae8de, type: 2}
+  TiempoDeJuego: 60
+  EstAct: 0
+  Player1: {fileID: 0}
+  Player2: {fileID: 0}
+  ConteoPosEsc:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 0
+    height: 0
+  ConteoParaInicion: 3
+  ConteoInicio: {fileID: 0}
+  TiempoDeJuegoText: {fileID: 0}
+  TiempEspMuestraPts: 1
+  PosCamionesCarrera:
+  - {x: -17.5, y: 1, z: 5243}
+  - {x: -4.2, y: 1, z: 5243}
+  PosCamion1Tuto: {x: 11.5, y: 6004.3, z: 5014.5}
+  PosCamion2Tuto: {x: -257.3, y: 6004.3, z: 5014.5}
+  ObjsCalibracion1:
+  - {fileID: 0}
+  ObjsCalibracion2:
+  - {fileID: 0}
+  ObjsCarrera:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!81 &2084743329156733410
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2084743329156736401}
+  m_Enabled: 1
