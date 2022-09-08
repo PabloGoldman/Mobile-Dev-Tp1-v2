@@ -2,18 +2,14 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-/// <summary>
-/// clase encargada de TODA la visualizacion
-/// de cada player, todo aquello que corresconda a 
-/// cada seccion de la pantalla independientemente
-/// </summary>
-public class Visualizacion : MonoBehaviour
+
+public class VisualizacionSinglePlayer : MonoBehaviour
 {
     public enum Lado { Izq, Der }
     public Lado LadoAct;
 
     ControlDireccion Direccion;
-    Player Pj;
+    PlayerSinglePlayer Pj;
 
     public GameObject uiRoot;
     public EnableInPlayerState[] enableInPlayerStates;
@@ -59,7 +55,7 @@ public class Visualizacion : MonoBehaviour
     void Start()
     {
         Direccion = GetComponent<ControlDireccion>();
-        Pj = GetComponent<Player>();
+        Pj = GetComponent<PlayerSinglePlayer>();
     }
 
     // Update is called once per frame
@@ -68,7 +64,7 @@ public class Visualizacion : MonoBehaviour
         switch (Pj.EstAct)
         {
 
-            case Player.Estados.EnConduccion:
+            case PlayerSinglePlayer.Estados.EnConduccion:
                 //inventario
                 SetInv();
                 //contador de dinero
@@ -77,7 +73,7 @@ public class Visualizacion : MonoBehaviour
                 SetVolante();
                 break;
 
-            case Player.Estados.EnDescarga:
+            case PlayerSinglePlayer.Estados.EnDescarga:
                 //inventario
                 SetInv();
                 //el bonus
@@ -86,7 +82,7 @@ public class Visualizacion : MonoBehaviour
                 SetDinero();
                 break;
 
-            case Player.Estados.EnTutorial:
+            case PlayerSinglePlayer.Estados.EnTutorial:
                 SetTuto();
                 break;
         }
@@ -100,7 +96,7 @@ public class Visualizacion : MonoBehaviour
         CamConduccion.enabled = false;
         CamDescarga.enabled = false;
 
-        Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(Pj.EstAct));
+        Array.ForEach(enableInPlayerStates, e => e.SetPlayerStateSinglePlayer(Pj.EstAct));
     }
 
     public void CambiarAConduccion()
@@ -109,7 +105,7 @@ public class Visualizacion : MonoBehaviour
         CamConduccion.enabled = true;
         CamDescarga.enabled = false;
 
-        Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(Pj.EstAct));
+        Array.ForEach(enableInPlayerStates, e => e.SetPlayerStateSinglePlayer(Pj.EstAct));
     }
 
     public void CambiarADescarga()
@@ -118,7 +114,7 @@ public class Visualizacion : MonoBehaviour
         CamConduccion.enabled = false;
         CamDescarga.enabled = true;
 
-        Array.ForEach(enableInPlayerStates, e => e.SetPlayerState(Pj.EstAct));
+        Array.ForEach(enableInPlayerStates, e => e.SetPlayerStateSinglePlayer(Pj.EstAct));
     }
 
     //---------//
@@ -178,19 +174,19 @@ public class Visualizacion : MonoBehaviour
     {
         switch (Pj.ContrCalib.EstAct)
         {
-            case ContrCalibracion.Estados.Calibrando:
+            case ContrCalibracionSinglePlayer.Estados.Calibrando:
                 TutoCalibrando.SetActive(true);
                 TutoDescargando.SetActive(false);
                 TutoFinalizado.SetActive(false);
                 break;
 
-            case ContrCalibracion.Estados.Tutorial:
+            case ContrCalibracionSinglePlayer.Estados.Tutorial:
                 TutoCalibrando.SetActive(false);
                 TutoDescargando.SetActive(true);
                 TutoFinalizado.SetActive(false);
                 break;
 
-            case ContrCalibracion.Estados.Finalizado:
+            case ContrCalibracionSinglePlayer.Estados.Finalizado:
                 TutoCalibrando.SetActive(false);
                 TutoDescargando.SetActive(false);
                 TutoFinalizado.SetActive(true);

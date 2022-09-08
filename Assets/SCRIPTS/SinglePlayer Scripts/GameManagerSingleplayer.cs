@@ -169,18 +169,12 @@ public class GameManagerSingleplayer : MonoBehaviour
 
     void FinalizarCarrera()
     {
-        EstAct = GameManagerSingleplayer.EstadoJuego.Finalizado;
+        EstAct = EstadoJuego.Finalizado;
 
         TiempoDeJuego = 0;
 
-        //lado que gano
-        if (Player1.LadoActual == Visualizacion.Lado.Der)
-            DatosPartida.LadoGanadaor = DatosPartida.Lados.Der;
-        else
-            DatosPartida.LadoGanadaor = DatosPartida.Lados.Izq;
-        //puntajes
+        DatosPartida.LadoGanadaor = DatosPartida.Lados.Der;
         DatosPartida.PtsGanador = Player1.Dinero;
-
 
         Player1.GetComponent<Frenado>().Frenar();
 

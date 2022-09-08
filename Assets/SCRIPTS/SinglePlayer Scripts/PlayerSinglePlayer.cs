@@ -20,13 +20,13 @@ public class PlayerSinglePlayer : MonoBehaviour
 	public ControladorDeDescargarSinglePlayer ContrDesc;
 	public ContrCalibracionSinglePlayer ContrCalib;
 
-	Visualizacion MiVisualizacion;
+	VisualizacionSinglePlayer MiVisualizacion;
 
 	public bool Seleccionado = false;
 	public bool FinCalibrado = false;
 	public bool FinTuto = false;
 
-	public Visualizacion.Lado LadoActual => MiVisualizacion.LadoAct;
+	//public VisualizacionSinglePlayer.Lado LadoActual => VisualizacionSinglePlayer.LadoAct;
 
 	//------------------------------------------------------------------//
 
@@ -35,7 +35,7 @@ public class PlayerSinglePlayer : MonoBehaviour
 		for (int i = 0; i < Bolasas.Length; i++)
 			Bolasas[i] = null;
 
-		MiVisualizacion = GetComponent<Visualizacion>();
+		MiVisualizacion = GetComponent<VisualizacionSinglePlayer>();
 	}
 
 	//------------------------------------------------------------------//
