@@ -12,10 +12,10 @@ public class ContrCalibracionSinglePlayer : MonoBehaviour
 	public enum Estados { Calibrando, Tutorial, Finalizado }
 	public Estados EstAct = Estados.Calibrando;
 
-	public ManejoPallets Partida;
-	public ManejoPallets Llegada;
+	public ManejoPalletsSinglePlayer Partida;
+	public ManejoPalletsSinglePlayer Llegada;
 	public Pallet P;
-	public ManejoPallets palletsMover;
+	public ManejoPalletsSinglePlayer palletsMover;
 
 	//----------------------------------------------------//
 
@@ -64,7 +64,7 @@ public class ContrCalibracionSinglePlayer : MonoBehaviour
 	{
 		EstAct = Estados.Finalizado;
 		palletsMover.enabled = false;
-		GameManager.Instancia.FinCalibracion(Pj.IdPlayer);
+		GameManagerSingleplayer.Instancia.FinCalibracion(Pj.IdPlayer);
 	}
 
 	void SetActivComp(bool estado)

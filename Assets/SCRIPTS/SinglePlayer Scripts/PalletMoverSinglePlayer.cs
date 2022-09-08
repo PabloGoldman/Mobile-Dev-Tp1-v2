@@ -1,10 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PalletMover : ManejoPallets
+public class PalletMoverSinglePlayer : ManejoPalletsSinglePlayer
 {
-
     public MoveType miInput;
     public enum MoveType
     {
@@ -12,7 +11,7 @@ public class PalletMover : ManejoPallets
         Arrows
     }
 
-    public ManejoPallets Desde, Hasta;
+    public ManejoPalletsSinglePlayer Desde, Hasta;
     bool segundoCompleto = false;
 
     private void Update()
@@ -68,7 +67,7 @@ public class PalletMover : ManejoPallets
         segundoCompleto = false;
     }
 
-    public override void Dar(ManejoPallets receptor)
+    public override void Dar(ManejoPalletsSinglePlayer receptor)
     {
         if (Tenencia())
         {
