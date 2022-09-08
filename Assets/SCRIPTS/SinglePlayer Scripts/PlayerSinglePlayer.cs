@@ -7,7 +7,7 @@ public class PlayerSinglePlayer : MonoBehaviour
 	public int Dinero = 0;
 	public int IdPlayer = 0;
 
-	public Bolsa[] Bolasas;
+	public BolsaSinglePlayer[] Bolasas;
 	int CantBolsAct = 0;
 	public string TagBolsas = "";
 
@@ -40,7 +40,7 @@ public class PlayerSinglePlayer : MonoBehaviour
 
 	//------------------------------------------------------------------//
 
-	public bool AgregarBolsa(Bolsa b)
+	public bool AgregarBolsa(BolsaSinglePlayer b)
 	{
 		if (CantBolsAct + 1 <= Bolasas.Length)
 		{
