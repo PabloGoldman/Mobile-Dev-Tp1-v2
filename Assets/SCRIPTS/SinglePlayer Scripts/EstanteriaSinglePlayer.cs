@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EstanteriaSinglePlayer : ManejoPalletsSinglePlayer
 {
-	public Cinta CintaReceptora;//cinta que debe recibir la bolsa
+	public CintaSinglePlayer CintaReceptora;//cinta que debe recibir la bolsa
 	public Pallet.Valores Valor;
 	PilaPalletMng Contenido;
 	public bool Anim = false;

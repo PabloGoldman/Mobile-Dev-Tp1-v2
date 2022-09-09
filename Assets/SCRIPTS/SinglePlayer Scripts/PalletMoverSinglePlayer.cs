@@ -11,43 +11,26 @@ public class PalletMoverSinglePlayer : ManejoPalletsSinglePlayer
         Arrows
     }
 
+    //SON LAS ANIMACIONES DEL PRINCIPIO // TUTORIAL
     public ManejoPalletsSinglePlayer Desde, Hasta;
     bool segundoCompleto = false;
 
     private void Update()
     {
-        switch (miInput)
+        if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.A))
         {
-            case MoveType.WASD:
-                if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.A))
-                {
-                    PrimerPaso();
-                }
-                if (Tenencia() && Input.GetKeyDown(KeyCode.S))
-                {
-                    SegundoPaso();
-                }
-                if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.D))
-                {
-                    TercerPaso();
-                }
-                break;
-            case MoveType.Arrows:
-                if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.LeftArrow))
-                {
-                    PrimerPaso();
-                }
-                if (Tenencia() && Input.GetKeyDown(KeyCode.DownArrow))
-                {
-                    SegundoPaso();
-                }
-                if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.RightArrow))
-                {
-                    TercerPaso();
-                }
-                break;
-            default:
-                break;
+            Debug.Log("Primer paso done");
+            PrimerPaso();
+        }
+        if (Tenencia() && Input.GetKeyDown(KeyCode.S))
+        {
+            Debug.Log("Segundo paso done");
+            SegundoPaso();
+        }
+        if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.D))
+        {
+            Debug.Log("Tercer paso done");
+            TercerPaso();
         }
     }
 

@@ -68,6 +68,8 @@ public class Estanteria : ManejoPallets
                 if (receptor.Recibir(Pallets[0])) {
                     //enciende la cinta y el indicador
                     //cambia la textura de cuantos pallet le queda
+
+					//ANIMACION DESCARGA
                     CintaReceptora.Encender();
                     Controlador.SalidaPallet(Pallets[0]);
                     Pallets[0].GetComponent<Renderer>().enabled = true;

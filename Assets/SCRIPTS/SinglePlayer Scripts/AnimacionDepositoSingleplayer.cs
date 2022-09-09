@@ -33,7 +33,6 @@ public class AnimacionDepositoSingleplayer : MonoBehaviour
 				break;
 
 			case AnimEnCurso.Salida:
-
 				if (!GetComponent<Animation>().IsPlaying(AnimSalida))
 				{
 					AnimAct = AnimEnCurso.Nada;

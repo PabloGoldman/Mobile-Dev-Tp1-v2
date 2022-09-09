@@ -250,8 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eae40435d83374741a8455bb829cd4cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controlador: {fileID: 0}
-  CintaReceptora: {fileID: 1012197303}
+  Controlador: {fileID: 1439968795}
+  CintaReceptora: {fileID: 2139639149}
   Valor: 250000
   Anim: 0
   Intervalo: 0.4
@@ -1119,6 +1119,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerTag: Player
+--- !u!1 &818635969 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4384723554228710019, guid: c71ba440b315c82429e1c132e676372c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1012197299}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &837535993 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2360244940856425274, guid: 61b5ff37a1cca0a4db9ab6a13c1af954,
@@ -1175,7 +1181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 191a5e0875a73a8449b739c888a37db1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controlador: {fileID: 0}
+  Controlador: {fileID: 1439968795}
   Mano: {fileID: 0}
   ContrCalib: {fileID: 1220337216}
 --- !u!1 &876200387 stripped
@@ -1875,6 +1881,7 @@ PrefabInstance:
     - {fileID: 4384723554228704204, guid: c71ba440b315c82429e1c132e676372c, type: 3}
     - {fileID: 4384723554228703766, guid: c71ba440b315c82429e1c132e676372c, type: 3}
     - {fileID: 4384723553403606738, guid: c71ba440b315c82429e1c132e676372c, type: 3}
+    - {fileID: 4384723554228703767, guid: c71ba440b315c82429e1c132e676372c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c71ba440b315c82429e1c132e676372c, type: 3}
 --- !u!20 &1012197300 stripped
 Camera:
@@ -1888,18 +1895,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1012197299}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1012197303 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4384723554228703767, guid: c71ba440b315c82429e1c132e676372c,
-    type: 3}
-  m_PrefabInstance: {fileID: 1012197299}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0e376e7b60a42d74b910ffb09b3fa25c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1012197304 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4384723554228708573, guid: c71ba440b315c82429e1c132e676372c,
@@ -1944,7 +1939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimEntrada: Entrada
   AnimSalida: Salida
-  ContrDesc: {fileID: 0}
+  ContrDesc: {fileID: 1439968795}
   PuertaAnimada: {fileID: 1012197307}
 --- !u!114 &1012197310
 MonoBehaviour:
@@ -3167,7 +3162,7 @@ MonoBehaviour:
   Est1: {fileID: 142673037}
   Est2: {fileID: 142673037}
   Est3: {fileID: 142673037}
-  Cin2: {fileID: 1012197303}
+  Cin2: {fileID: 0}
   Bonus: 0
   ObjAnimado: {fileID: 1012197309}
 --- !u!1 &1442409472 stripped
@@ -3757,7 +3752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07bce2e56c15e014a8d5d0357168303b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controlador: {fileID: 0}
+  Controlador: {fileID: 1439968795}
   ManoReceptora: {fileID: 0}
 --- !u!1001 &1716404879
 PrefabInstance:
@@ -3915,8 +3910,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controlador: {fileID: 0}
   miInput: 0
-  Desde: {fileID: 1703957781}
-  Hasta: {fileID: 868134868}
+  Desde: {fileID: 142673037}
+  Hasta: {fileID: 2139639149}
 --- !u!1 &1763783948 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2250989878789938127, guid: 193992fce27c3da4c8d77a4d45d02fd6,
@@ -4647,6 +4642,35 @@ MonoBehaviour:
   ImagenInventario: {fileID: 2800000, guid: ffb09134ec687894f834a6c9d27329fb, type: 3}
   Particulas: {fileID: 0}
   TiempParts: 2.7
+--- !u!1 &2139639148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4384723554228710688, guid: c71ba440b315c82429e1c132e676372c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1012197299}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2139639149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2139639148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071a79e6525e944438fdc68ec356cfe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controlador: {fileID: 0}
+  Encendida: 0
+  Velocidad: 3.5
+  Mano: {fileID: 0}
+  Tiempo: 0.75
+  Intervalo: 0.4
+  Permanencia: 0.1
+  ModelCinta: {fileID: 818635969}
+  ColorParpadeo:
+    serializedVersion: 2
+    rgba: 4283170816
 --- !u!1 &2145235396 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8788252320595221874, guid: 193992fce27c3da4c8d77a4d45d02fd6,
