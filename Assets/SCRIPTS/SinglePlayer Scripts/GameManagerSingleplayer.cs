@@ -59,7 +59,6 @@ public class GameManagerSingleplayer : MonoBehaviour
             log += $"{t.fingerId} - {t.position} ";
         }
 
-
         //REINICIAR
         if (Input.GetKey(KeyCode.Alpha0))
         {
@@ -134,7 +133,7 @@ public class GameManagerSingleplayer : MonoBehaviour
 
                 TiempEspMuestraPts -= Time.deltaTime;
                 if (TiempEspMuestraPts <= 0)
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    SceneManager.LoadScene(3);  //hacer que vaya a la escena de puntos final singleplayer
                 break;
         }
 

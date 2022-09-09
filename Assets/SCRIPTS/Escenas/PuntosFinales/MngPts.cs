@@ -63,9 +63,6 @@ public class MngPts : MonoBehaviour
 			SceneManager.LoadScene(0);
 		}
 		
-		
-		
-		
 		if(ActivadoAnims)
 		{
 			TempoParpadeo += Time.deltaTime;
@@ -84,8 +81,6 @@ public class MngPts : MonoBehaviour
 			}
 		}
 		
-		
-		
 		if(!ActivadoAnims)
 		{
 			Tempo += Time.deltaTime;
@@ -95,8 +90,6 @@ public class MngPts : MonoBehaviour
 				ActivadoAnims = true;
 			}
 		}
-		
-		
 	}
 	
 	void OnGUI()
@@ -137,8 +130,6 @@ public class MngPts : MonoBehaviour
 		
 		R.width = DineroEsc.x * Screen.width/100;
 		R.height = DineroEsc.y * Screen.height/100;
-		
-		
 		
 		//IZQUIERDA
 		R.x = DineroPos[0].x * Screen.width/100;
