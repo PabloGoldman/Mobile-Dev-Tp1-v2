@@ -54,6 +54,8 @@ public class EstanteriaSinglePlayer : ManejoPalletsSinglePlayer
 	void OnTriggerEnter(Collider other)
 	{
 		ManejoPalletsSinglePlayer recept = other.GetComponent<ManejoPalletsSinglePlayer>();
+		Debug.Log("Entro en colision?");
+
 		if (recept != null)
 		{
 			Dar(recept);
@@ -64,10 +66,13 @@ public class EstanteriaSinglePlayer : ManejoPalletsSinglePlayer
 
 	public override void Dar(ManejoPalletsSinglePlayer receptor)
 	{
+		Debug.Log("Entro en dar");
 		if (Tenencia())
 		{
+			Debug.Log("Intento tener?");
 			if (Controlador.GetPalletEnMov() == null)
 			{
+				Debug.Log("Intento encender");
 				if (receptor.Recibir(Pallets[0]))
 				{
 					//enciende la cinta y el indicador

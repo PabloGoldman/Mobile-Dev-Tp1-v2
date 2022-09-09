@@ -631,6 +631,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerTag: Player
+--- !u!1 &399204914 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 382945592076582034, guid: 61b5ff37a1cca0a4db9ab6a13c1af954,
+    type: 3}
+  m_PrefabInstance: {fileID: 1480351427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &399204915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399204914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d072d559057603c4d9c9fb2eecf4d4a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerTag: Player
+  TiempPermanencia: 1.5
 --- !u!1 &480670063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,6 +2659,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   TiempPermanencia: 1.5
+--- !u!1 &1179194489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 752332674113236611, guid: 61b5ff37a1cca0a4db9ab6a13c1af954,
+    type: 3}
+  m_PrefabInstance: {fileID: 1480351427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1179194490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179194489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d072d559057603c4d9c9fb2eecf4d4a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerTag: Player
+  TiempPermanencia: 1.5
 --- !u!1 &1202969065 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3900122771311884657, guid: 61b5ff37a1cca0a4db9ab6a13c1af954,
@@ -2658,6 +2698,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerTag: Player
+--- !u!1 &1207932705 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2713489958650748713, guid: 61b5ff37a1cca0a4db9ab6a13c1af954,
+    type: 3}
+  m_PrefabInstance: {fileID: 1480351427}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1207932706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207932705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d072d559057603c4d9c9fb2eecf4d4a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerTag: Player
+  TiempPermanencia: 1.5
 --- !u!1001 &1218021741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3162,7 +3222,7 @@ MonoBehaviour:
   Est1: {fileID: 142673037}
   Est2: {fileID: 142673037}
   Est3: {fileID: 142673037}
-  Cin2: {fileID: 0}
+  Cin2: {fileID: 2139639149}
   Bonus: 0
   ObjAnimado: {fileID: 1012197309}
 --- !u!1 &1442409472 stripped
@@ -3409,6 +3469,9 @@ PrefabInstance:
     - {fileID: 5136115156520710611, guid: 61b5ff37a1cca0a4db9ab6a13c1af954, type: 3}
     - {fileID: 5136115156520710605, guid: 61b5ff37a1cca0a4db9ab6a13c1af954, type: 3}
     - {fileID: 5136115156520710610, guid: 61b5ff37a1cca0a4db9ab6a13c1af954, type: 3}
+    - {fileID: 6956077254211632927, guid: 61b5ff37a1cca0a4db9ab6a13c1af954, type: 3}
+    - {fileID: 7924238958180879104, guid: 61b5ff37a1cca0a4db9ab6a13c1af954, type: 3}
+    - {fileID: 1679469945989208632, guid: 61b5ff37a1cca0a4db9ab6a13c1af954, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 61b5ff37a1cca0a4db9ab6a13c1af954, type: 3}
 --- !u!4 &1480351428 stripped
 Transform:
@@ -3903,12 +3966,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1754522965}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0fb0056193ab8148a2a3a665c882aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controlador: {fileID: 0}
+  Controlador: {fileID: 1439968795}
   miInput: 0
   Desde: {fileID: 142673037}
   Hasta: {fileID: 2139639149}
@@ -4660,7 +4723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071a79e6525e944438fdc68ec356cfe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controlador: {fileID: 0}
+  Controlador: {fileID: 1439968795}
   Encendida: 0
   Velocidad: 3.5
   Mano: {fileID: 0}

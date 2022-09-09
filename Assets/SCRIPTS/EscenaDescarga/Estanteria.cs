@@ -63,7 +63,7 @@ public class Estanteria : ManejoPallets
 	
 	public override void Dar(ManejoPallets receptor)
 	{
-        if (Tenencia()) {
+		if (Tenencia()) {
             if (Controlador.GetPalletEnMov() == null) {
                 if (receptor.Recibir(Pallets[0])) {
                     //enciende la cinta y el indicador

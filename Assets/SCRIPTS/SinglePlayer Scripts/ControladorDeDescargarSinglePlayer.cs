@@ -30,7 +30,7 @@ public class ControladorDeDescargarSinglePlayer : MonoBehaviour
 	public EstanteriaSinglePlayer Est2;
 	public EstanteriaSinglePlayer Est3;
 
-	public Cinta Cin2;
+	public CintaSinglePlayer Cin2;
 
 	public float Bonus = 0;
 	float TempoBonus;

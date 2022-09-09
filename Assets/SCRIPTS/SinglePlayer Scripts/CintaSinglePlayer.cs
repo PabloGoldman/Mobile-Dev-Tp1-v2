@@ -98,6 +98,7 @@ public class CintaSinglePlayer : ManejoPalletsSinglePlayer
 
 	public void Encender()
 	{
+		Debug.Log("encendida");
 		Encendida = true;
 		ModelCinta.GetComponent<Renderer>().material.color = ColorOrigModel;
 	}

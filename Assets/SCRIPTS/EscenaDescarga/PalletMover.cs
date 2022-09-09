@@ -54,6 +54,7 @@ public class PalletMover : ManejoPallets
 
     void PrimerPaso()
     {
+        Debug.Log("Entro en dar");
         Desde.Dar(this);
         segundoCompleto = false;
     }
