@@ -15,7 +15,6 @@ public class EstantePartida : ManejoPallets
 	}
 	
 	//------------------------------------------------------------//
-	
 	public override void Dar(ManejoPallets receptor)
 	{
         if (receptor.Recibir(Pallets[0])) {

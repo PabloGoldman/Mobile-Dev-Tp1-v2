@@ -101,17 +101,17 @@ public class ControladorDeDescargarSinglePlayer : MonoBehaviour
 				switch (Pj.Bolasas[i].Monto)
 				{
 					case Pallet.Valores.Valor1:
-						go = (GameObject)Instantiate(Pallet1);
+						go = Instantiate(Pallet1);
 						Est1.Recibir(go.GetComponent<Pallet>());
 						break;
 
 					case Pallet.Valores.Valor2:
-						go = (GameObject)Instantiate(Pallet2);
+						go = Instantiate(Pallet2);
 						Est2.Recibir(go.GetComponent<Pallet>());
 						break;
 
 					case Pallet.Valores.Valor3:
-						go = (GameObject)Instantiate(Pallet3);
+						go = Instantiate(Pallet3);
 						Est3.Recibir(go.GetComponent<Pallet>());
 						break;
 				}
