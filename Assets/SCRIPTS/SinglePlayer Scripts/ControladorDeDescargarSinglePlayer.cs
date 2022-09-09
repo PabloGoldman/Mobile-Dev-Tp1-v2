@@ -26,9 +26,9 @@ public class ControladorDeDescargarSinglePlayer : MonoBehaviour
 	public GameObject Pallet2;
 	public GameObject Pallet3;
 
-	public Estanteria Est1;
-	public Estanteria Est2;
-	public Estanteria Est3;
+	public EstanteriaSinglePlayer Est1;
+	public EstanteriaSinglePlayer Est2;
+	public EstanteriaSinglePlayer Est3;
 
 	public Cinta Cin2;
 

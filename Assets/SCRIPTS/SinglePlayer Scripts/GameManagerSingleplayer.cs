@@ -39,7 +39,7 @@ public class GameManagerSingleplayer : MonoBehaviour
 
     void Awake()
     {
-        GameManagerSingleplayer.Instancia = this;
+        Instancia = this;
     }
 
     IEnumerator Start()
@@ -163,7 +163,7 @@ public class GameManagerSingleplayer : MonoBehaviour
 
     void EmpezarCarrera()
     {
-        Player1.GetComponent<Frenado>().RestaurarVel();
+        Player1.GetComponent<FrenadoSinglePlayer>().RestaurarVel();
         Player1.GetComponent<ControlDireccion>().Habilitado = true;
     }
 
@@ -176,7 +176,7 @@ public class GameManagerSingleplayer : MonoBehaviour
         DatosPartida.LadoGanadaor = DatosPartida.Lados.Der;
         DatosPartida.PtsGanador = Player1.Dinero;
 
-        Player1.GetComponent<Frenado>().Frenar();
+        Player1.GetComponent<FrenadoSinglePlayer>().Frenar();
 
         Player1.ContrDesc.FinDelJuego();
     }
@@ -184,8 +184,7 @@ public class GameManagerSingleplayer : MonoBehaviour
     //cambia a modo de carrera
     void CambiarACarrera()
     {
-
-        EstAct = GameManagerSingleplayer.EstadoJuego.Jugando;
+        EstAct = EstadoJuego.Jugando;
 
         for (int i = 0; i < ObjsCarrera.Length; i++)
         {
@@ -203,11 +202,11 @@ public class GameManagerSingleplayer : MonoBehaviour
         Player1.gameObject.transform.position = PosCamionesCarrera[0];
 
         Player1.transform.forward = Vector3.forward;
-        Player1.GetComponent<Frenado>().Frenar();
+        Player1.GetComponent<FrenadoSinglePlayer>().Frenar();
         Player1.CambiarAConduccion();
 
         //los deja andando
-        Player1.GetComponent<Frenado>().RestaurarVel();
+        Player1.GetComponent<FrenadoSinglePlayer>().RestaurarVel();
         //cancela la direccion
         Player1.GetComponent<ControlDireccion>().Habilitado = false;
         //les de direccion

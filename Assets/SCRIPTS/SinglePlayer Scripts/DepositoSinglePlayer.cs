@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DepositoSinglePlayer : MonoBehaviour
 {
-	Player PjActual;
+	PlayerSinglePlayer PjActual;
 	public string PlayerTag = "Player";
 	public bool Vacio = true;
 	public ControladorDeDescargarSinglePlayer Contr1;
@@ -35,8 +35,8 @@ public class DepositoSinglePlayer : MonoBehaviour
 	public void Soltar()
 	{
 		PjActual.VaciarInv();
-		PjActual.GetComponent<Frenado>().RestaurarVel();
-		PjActual.GetComponent<Respawn>().Respawnear(transform.position, transform.forward);
+		PjActual.GetComponent<FrenadoSinglePlayer>().RestaurarVel();
+		PjActual.GetComponent<RespawnSinglePlayer>().Respawnear(transform.position, transform.forward);
 
 		PjActual.GetComponent<Rigidbody>().useGravity = true;
 		for (int i = 0; i < PjColl.Length; i++)
@@ -48,7 +48,7 @@ public class DepositoSinglePlayer : MonoBehaviour
 		Vacio = true;
 	}
 
-	public void Entrar(Player pj)
+	public void Entrar(PlayerSinglePlayer pj)
 	{
 		if (pj.ConBolasas())
 		{
