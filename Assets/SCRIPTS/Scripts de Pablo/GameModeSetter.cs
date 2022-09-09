@@ -10,12 +10,12 @@ public class GameModeSetter : MonoBehaviour
         if (soloMode)
         {
             gameModeData.gameMode = GameModeData.GameMode.Solo;
+            SceneManager.Get().ChangeScene(2);
         }
         else
         {
             gameModeData.gameMode = GameModeData.GameMode.Multiplayer;
+            SceneManager.Get().ChangeScene(1);
         }
-
-        SceneManager.Get().ChangeScene(1);
     }
 }

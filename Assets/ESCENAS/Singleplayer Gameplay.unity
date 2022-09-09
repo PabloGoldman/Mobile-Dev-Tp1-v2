@@ -2582,6 +2582,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -3.34
       objectReference: {fileID: 0}
+    - target: {fileID: 4384723554228713927, guid: c71ba440b315c82429e1c132e676372c,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4384723554228704204, guid: c71ba440b315c82429e1c132e676372c, type: 3}
     - {fileID: 4384723554228703766, guid: c71ba440b315c82429e1c132e676372c, type: 3}
