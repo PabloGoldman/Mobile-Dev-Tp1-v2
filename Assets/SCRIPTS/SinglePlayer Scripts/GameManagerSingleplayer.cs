@@ -8,6 +8,8 @@ public class GameManagerSingleplayer : MonoBehaviour
 {
     public static GameManagerSingleplayer Instancia;
 
+    public SinglePlayerData playerData;
+
     [SerializeField] GameModeData gameData;
 
     public float TiempoDeJuego = 60;
@@ -133,7 +135,7 @@ public class GameManagerSingleplayer : MonoBehaviour
 
                 TiempEspMuestraPts -= Time.deltaTime;
                 if (TiempEspMuestraPts <= 0)
-                    SceneManager.LoadScene(3);  //hacer que vaya a la escena de puntos final singleplayer
+                    SceneManager.LoadScene(4);  //hacer que vaya a la escena de puntos final singleplayer
                 break;
         }
 
@@ -144,6 +146,8 @@ public class GameManagerSingleplayer : MonoBehaviour
 
     public void IniciarTutorial()
     {
+        playerData.finalScore = 0;
+
         for (int i = 0; i < ObjsCalibracion1.Length; i++)
         {
             ObjsCalibracion1[i].SetActive(true);
@@ -172,8 +176,7 @@ public class GameManagerSingleplayer : MonoBehaviour
 
         TiempoDeJuego = 0;
 
-        DatosPartida.LadoGanadaor = DatosPartida.Lados.Der;
-        DatosPartida.PtsGanador = Player1.Dinero;
+        playerData.finalScore = Player1.Dinero;
 
         Player1.GetComponent<FrenadoSinglePlayer>().Frenar();
 

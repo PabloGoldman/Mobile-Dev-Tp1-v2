@@ -17,5 +17,7 @@ public class GameModeSetter : MonoBehaviour
             gameModeData.gameMode = GameModeData.GameMode.Multiplayer;
             SceneManager.Get().ChangeScene(1);
         }
+
+
     }
 }
