@@ -6,11 +6,17 @@ using UnityEngine.UI;
 
 public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
-    [SerializeField] RectTransform stick;
-    [SerializeField] Image background = null;
+    RectTransform stick;
+    Image background = null;
 
     public string player = "";
     public float limit = 250;
+
+    void Start()
+    {
+        background = transform.GetChild(0).GetComponent<Image>();
+        stick = transform.GetChild(1).GetComponent<RectTransform>();
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -53,23 +59,24 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 
     void SetHorizontal(float val)
     {
-        InputManager.Instance.SetAxis("Horizontal" + player, val);
+        InputManager.Get().SetAxis("Horizontal" + player, val);
     }
 
     void SetVertical(float val)
     {
-        InputManager.Instance.SetAxis("Vertical" + player, val);
+        InputManager.Get().SetAxis("Vertical" + player, val);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    Vector2 ConvertToLocal(PointerEventData eventData)
     {
-        
-    }
+        Vector2 newPos;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            transform as RectTransform, 
+            eventData.position, 
+            eventData.enterEventCamera,
+            out newPos);
+
+        return newPos;
     }
 }
