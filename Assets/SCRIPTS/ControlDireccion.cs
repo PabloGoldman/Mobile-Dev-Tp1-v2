@@ -73,7 +73,7 @@ public class ControlDireccion : MonoBehaviour
         //        break;
         //}
 
-        Giro = Input.GetAxis(inputName);
+        Giro = InputManager.Get().GetAxis(inputName);
 
         carController.SetGiro(Giro);
     }
