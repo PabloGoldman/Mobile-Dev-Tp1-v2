@@ -3070,26 +3070,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerTag: Player
   TiempPermanencia: 1.5
---- !u!1 &1051566298 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2989750892931236307, guid: dd13765058caa214abb3787701669704,
-    type: 3}
-  m_PrefabInstance: {fileID: 1161004454}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1051566299
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051566298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d91ac887b53b024e8a6e636feb7ab6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MisEstados: 
-  MisEstadosSinglePlayer: 01000000
 --- !u!1 &1062446522 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4630459922689487674, guid: 61b5ff37a1cca0a4db9ab6a13c1af954,
@@ -3537,7 +3517,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1161004454}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051566298}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -5402,8 +5382,8 @@ MonoBehaviour:
     width: 0
     height: 0
   ConteoParaInicion: 3
-  ConteoInicio: {fileID: 1161004457}
-  TiempoDeJuegoText: {fileID: 1161004456}
+  ConteoInicio: {fileID: 1161004456}
+  TiempoDeJuegoText: {fileID: 1161004457}
   TiempEspMuestraPts: 3
   PosCamionesCarrera:
   - {x: -10.6, y: 2, z: 378}
@@ -5693,26 +5673,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerTag: Player
---- !u!1 &1881524643 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2989750892260016999, guid: dd13765058caa214abb3787701669704,
-    type: 3}
-  m_PrefabInstance: {fileID: 1161004454}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1881524645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881524643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d91ac887b53b024e8a6e636feb7ab6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MisEstados: 
-  MisEstadosSinglePlayer: 03000000
 --- !u!1 &1895874870 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8720639843827048667, guid: 61b5ff37a1cca0a4db9ab6a13c1af954,
@@ -6039,26 +5999,6 @@ MonoBehaviour:
   ImagenInventario: {fileID: 2800000, guid: ffb09134ec687894f834a6c9d27329fb, type: 3}
   Particulas: {fileID: 0}
   TiempParts: 2.7
---- !u!1 &2029140560 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2989750891834305033, guid: dd13765058caa214abb3787701669704,
-    type: 3}
-  m_PrefabInstance: {fileID: 1161004454}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2029140564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029140560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d91ac887b53b024e8a6e636feb7ab6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MisEstados: 
-  MisEstadosSinglePlayer: 01000000
 --- !u!1 &2046174537 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8454004904881086228, guid: 713f579426caf9042b5552dc405201d9,
