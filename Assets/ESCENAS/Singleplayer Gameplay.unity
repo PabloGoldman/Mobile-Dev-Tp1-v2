@@ -3801,6 +3801,16 @@ PrefabInstance:
       propertyPath: m_NormalizedViewPortRect.width
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8454004904881080274, guid: 713f579426caf9042b5552dc405201d9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a0864d9db1c9b34f8db0cc24999f1b4, type: 2}
+    - target: {fileID: 8454004904881080277, guid: 713f579426caf9042b5552dc405201d9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0a0864d9db1c9b34f8db0cc24999f1b4, type: 2}
     - target: {fileID: 8454004904881082704, guid: 713f579426caf9042b5552dc405201d9,
         type: 3}
       propertyPath: m_Name

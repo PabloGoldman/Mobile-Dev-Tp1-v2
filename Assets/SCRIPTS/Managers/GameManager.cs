@@ -1,8 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-
 using System.Collections;
+using Managers;
 
 public class GameManager : MonoBehaviour
 {
@@ -44,7 +43,7 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        GameManager.Instancia = this;
+        Instancia = this;
     }
 
     IEnumerator Start()
@@ -68,7 +67,7 @@ public class GameManager : MonoBehaviour
         //REINICIAR
         if (Input.GetKey(KeyCode.Alpha0))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.Get().ResetLevel();
         }
 
         //CIERRA LA APLICACION
@@ -145,7 +144,7 @@ public class GameManager : MonoBehaviour
 
                 TiempEspMuestraPts -= Time.deltaTime;
                 if (TiempEspMuestraPts <= 0)
-                    SceneManager.LoadScene(3);
+                    SceneManager.Get().ChangeScene(3);
 
                 break;
         }
