@@ -5,7 +5,10 @@ public class Respawn : MonoBehaviour
 {
 	CheakPoint CPAct;
 	CheakPoint CPAnt;
-	
+
+	Vector3 initialPos;
+	Quaternion initialRot;
+
 	public float AngMax = 90;//angulo maximo antes del cual se reinicia el camion
 	int VerifPorCuadro = 20;
 	int Contador = 0;
@@ -24,6 +27,8 @@ public class Respawn : MonoBehaviour
 	{
 		//restaura las colisiones
 		Physics.IgnoreLayerCollision(8,9,false);
+		initialPos = transform.position;
+		initialRot = transform.rotation;
 	}
 	
 	// Update is called once per frame
@@ -61,7 +66,12 @@ public class Respawn : MonoBehaviour
 		
 		gameObject.GetComponent<CarController>().SetGiro(0f);
 
-        if (CPAct.Habilitado())
+        if (!CPAct)
+        {
+			transform.position = initialPos;
+			transform.rotation = initialRot;
+		}
+        else if (CPAct.Habilitado())
 		{
 			if(GetComponent<Visualizacion>().LadoAct == Visualizacion.Lado.Der)
 				transform.position = CPAct.transform.position + CPAct.transform.right * Random.Range(RangMinDer, RangMaxDer);
