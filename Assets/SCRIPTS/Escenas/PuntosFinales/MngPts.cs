@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using Managers;
 
 public class MngPts : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class MngPts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        foreach (Touch t in Input.touches)
+        {
+            Managers.SceneManager.Get().ChangeScene(0);
+        }
+
         //PARA JUGAR
         if (Input.GetKeyDown(KeyCode.Space) ||
            Input.GetKeyDown(KeyCode.Return) ||
