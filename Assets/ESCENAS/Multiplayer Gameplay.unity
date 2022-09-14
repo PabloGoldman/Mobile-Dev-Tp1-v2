@@ -28797,6 +28797,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &925999392 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1423010637135037369, guid: 46b7d47dfcd31c2418bf72c398e097b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1423010637135037192}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1041039464
 GameObject:
   m_ObjectHideFlags: 0
@@ -29466,6 +29472,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstaculos
       objectReference: {fileID: 0}
+    - target: {fileID: 1423010637135040316, guid: 46b7d47dfcd31c2418bf72c398e097b3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1423010637135043447, guid: 46b7d47dfcd31c2418bf72c398e097b3,
         type: 3}
       propertyPath: m_RootOrder
@@ -29532,6 +29543,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2084743329156733584, guid: 01a6e0568200ffb4aa85cab9bf527fa0,
         type: 3}
+      propertyPath: taxis
+      value: 
+      objectReference: {fileID: 925999392}
+    - target: {fileID: 2084743329156733584, guid: 01a6e0568200ffb4aa85cab9bf527fa0,
+        type: 3}
       propertyPath: Player1
       value: 
       objectReference: {fileID: 13058}
@@ -29545,6 +29561,11 @@ PrefabInstance:
       propertyPath: ConteoInicio
       value: 
       objectReference: {fileID: 11471493}
+    - target: {fileID: 2084743329156733584, guid: 01a6e0568200ffb4aa85cab9bf527fa0,
+        type: 3}
+      propertyPath: allObstacles
+      value: 
+      objectReference: {fileID: 3124}
     - target: {fileID: 2084743329156733584, guid: 01a6e0568200ffb4aa85cab9bf527fa0,
         type: 3}
       propertyPath: TiempoDeJuego

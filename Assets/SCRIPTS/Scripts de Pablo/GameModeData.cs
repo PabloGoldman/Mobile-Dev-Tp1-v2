@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "GameModeData")]
 public class GameModeData : ScriptableObject
 {
-    public enum GameMode { Solo, Multiplayer};
+    public enum GameMode { Easy, Medium, Hard};
 
     public GameMode gameMode;
 }

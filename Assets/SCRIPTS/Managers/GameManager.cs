@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instancia;
 
     [SerializeField] GameModeData gameData;
+    [SerializeField] GameObject taxis;
 
     [SerializeField] VirtualJoystick[] virtualJoystick;
 
@@ -51,6 +52,9 @@ public class GameManager : MonoBehaviour
     IEnumerator Start()
     {
         yield return null;
+
+        
+
         IniciarTutorial();
     }
 
@@ -234,12 +238,30 @@ public class GameManager : MonoBehaviour
     //cambia a modo de carrera
     void CambiarACarrera()
     {
+        EstAct = EstadoJuego.Jugando;
 
-        EstAct = GameManager.EstadoJuego.Jugando;
-
-        for (int i = 0; i < ObjsCarrera.Length; i++)
+        switch (gameData.gameMode)
         {
-            ObjsCarrera[i].SetActive(true);
+            case GameModeData.GameMode.Easy:
+                ObjsCarrera[1].SetActive(true);
+                ObjsCarrera[2].SetActive(true);
+                break;
+            case GameModeData.GameMode.Medium:
+                for (int i = 0; i < ObjsCarrera.Length; i++)
+                {
+                    ObjsCarrera[i].SetActive(true);
+                    taxis.SetActive(false);
+                }
+                break;
+            case GameModeData.GameMode.Hard:
+
+                for (int i = 0; i < ObjsCarrera.Length; i++)
+                {
+                    ObjsCarrera[i].SetActive(true);
+                }
+                break;
+            default:
+                break;
         }
 
         //desactivacion de la calibracion

@@ -16,6 +16,7 @@ public class PalletMoverSinglePlayer : ManejoPalletsSinglePlayer
     bool segundoCompleto = false;
 
     int amountOfTouches;
+    int touchesToChange = 1;
 
     private void Update()
     {
@@ -27,19 +28,19 @@ public class PalletMoverSinglePlayer : ManejoPalletsSinglePlayer
             }
         }
 
-        if (!Tenencia() && Desde.Tenencia() && (Input.GetKeyDown(KeyCode.A) || amountOfTouches >= 5))
+        if (!Tenencia() && Desde.Tenencia() && (Input.GetKeyDown(KeyCode.A) || amountOfTouches >= touchesToChange))
         {
             Debug.Log("Primer paso done");
             amountOfTouches = 0;
             PrimerPaso();
         }
-        if (Tenencia() && (Input.GetKeyDown(KeyCode.S) || amountOfTouches >= 5) && segundoCompleto == false)
+        if (Tenencia() && (Input.GetKeyDown(KeyCode.S) || amountOfTouches >= touchesToChange) && segundoCompleto == false)
         {
             Debug.Log("Segundo paso done");
             amountOfTouches = 0;
             SegundoPaso();
         }
-        if (segundoCompleto && Tenencia() && (Input.GetKeyDown(KeyCode.D) || amountOfTouches >= 5))
+        if (segundoCompleto && Tenencia() && (Input.GetKeyDown(KeyCode.D) || amountOfTouches >= touchesToChange))
         {
             Debug.Log("Tercer paso done");
             amountOfTouches = 0;

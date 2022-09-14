@@ -2279,6 +2279,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstaculos
       objectReference: {fileID: 0}
+    - target: {fileID: 1423010637135040316, guid: 46b7d47dfcd31c2418bf72c398e097b3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1423010637135043447, guid: 46b7d47dfcd31c2418bf72c398e097b3,
         type: 3}
       propertyPath: m_RootOrder
@@ -2356,6 +2361,12 @@ Transform:
 --- !u!1 &969244153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1423010637135040316, guid: 46b7d47dfcd31c2418bf72c398e097b3,
+    type: 3}
+  m_PrefabInstance: {fileID: 969244151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &969244154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1423010637135037369, guid: 46b7d47dfcd31c2418bf72c398e097b3,
     type: 3}
   m_PrefabInstance: {fileID: 969244151}
   m_PrefabAsset: {fileID: 0}
@@ -5426,6 +5437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: 4d680e7cbd405df46833b5db1aa8e975, type: 2}
   gameData: {fileID: 11400000, guid: 77b1cf5c80018ee47a9586ee291ae8de, type: 2}
+  taxis: {fileID: 969244154}
   virtualJoystick: {fileID: 955943552}
   TiempoDeJuego: 60
   EstAct: 0

@@ -11,6 +11,8 @@ public class GameManagerSingleplayer : MonoBehaviour
     public SinglePlayerData playerData;
 
     [SerializeField] GameModeData gameData;
+    [SerializeField] GameObject taxis;
+
 
     [SerializeField] VirtualJoystick virtualJoystick;
 
@@ -188,11 +190,29 @@ public class GameManagerSingleplayer : MonoBehaviour
     {
         EstAct = EstadoJuego.Jugando;
 
-        for (int i = 0; i < ObjsCarrera.Length; i++)
+        switch (gameData.gameMode)
         {
-            ObjsCarrera[i].SetActive(true);
-        }
+            case GameModeData.GameMode.Easy:
+                ObjsCarrera[1].SetActive(true);
+                ObjsCarrera[2].SetActive(true);
+                break;
+            case GameModeData.GameMode.Medium:
+                for (int i = 0; i < ObjsCarrera.Length; i++)
+                {
+                    ObjsCarrera[i].SetActive(true);
+                    taxis.SetActive(false);
+                }
+                break;
+            case GameModeData.GameMode.Hard:
 
+                for (int i = 0; i < ObjsCarrera.Length; i++)
+                {
+                    ObjsCarrera[i].SetActive(true);
+                }
+                break;
+            default:
+                break;
+        }
         //desactivacion de la calibracion
         Player1.FinCalibrado = true;
 

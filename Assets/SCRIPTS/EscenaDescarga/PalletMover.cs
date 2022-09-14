@@ -18,6 +18,7 @@ public class PalletMover : ManejoPallets
     bool primeroCompleto = false;
 
     int amountOfTouches;
+    int touchesToChange = 1;
 
     private void Update()
     {
@@ -45,7 +46,7 @@ public class PalletMover : ManejoPallets
         switch (miInput)
         {
             case MoveType.WASD:
-                if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.A) || amountOfTouches >= 5 && !primeroCompleto)
+                if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.A) || amountOfTouches >= touchesToChange && !primeroCompleto)
                 {
                     amountOfTouches = 0;
                     PrimerPaso();
@@ -53,12 +54,12 @@ public class PalletMover : ManejoPallets
                     primeroCompleto = true;
                     segundoCompleto = false;
                 }
-                if (Tenencia() && (Input.GetKeyDown(KeyCode.S) || amountOfTouches >= 5) && !segundoCompleto)
+                if (Tenencia() && (Input.GetKeyDown(KeyCode.S) || amountOfTouches >= touchesToChange) && !segundoCompleto)
                 {
                     amountOfTouches = 0;
                     SegundoPaso();
                 }
-                if (segundoCompleto && Tenencia() && (Input.GetKeyDown(KeyCode.D) || amountOfTouches >= 5))
+                if (segundoCompleto && Tenencia() && (Input.GetKeyDown(KeyCode.D) || amountOfTouches >= touchesToChange))
                 {
                     amountOfTouches = 0;
                     TercerPaso();
@@ -66,19 +67,19 @@ public class PalletMover : ManejoPallets
                 }
                 break;
             case MoveType.Arrows:
-                if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.LeftArrow) || amountOfTouches >= 5 && !primeroCompleto)
+                if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.LeftArrow) || amountOfTouches >= touchesToChange && !primeroCompleto)
                 {
                     amountOfTouches = 0;
                     PrimerPaso();
                     primeroCompleto = true;
                     segundoCompleto = false;
                 }
-                if (Tenencia() && (Input.GetKeyDown(KeyCode.DownArrow) || amountOfTouches >= 5) && !segundoCompleto)
+                if (Tenencia() && (Input.GetKeyDown(KeyCode.DownArrow) || amountOfTouches >= touchesToChange) && !segundoCompleto)
                 {
                     amountOfTouches = 0;
                     SegundoPaso();
                 }
-                if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.RightArrow) || amountOfTouches >= 5)
+                if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.RightArrow) || amountOfTouches >= touchesToChange)
                 {
                     amountOfTouches = 0;
                     TercerPaso();
