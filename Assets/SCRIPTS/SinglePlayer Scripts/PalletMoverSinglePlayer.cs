@@ -21,7 +21,10 @@ public class PalletMoverSinglePlayer : ManejoPalletsSinglePlayer
     {
         foreach (Touch t in Input.touches)
         {
-            AddTouches();
+            if (t.phase == TouchPhase.Began)
+            {
+                AddTouches();
+            }
         }
 
         if (!Tenencia() && Desde.Tenencia() && (Input.GetKeyDown(KeyCode.A) || amountOfTouches >= 5))
@@ -48,7 +51,6 @@ public class PalletMoverSinglePlayer : ManejoPalletsSinglePlayer
     {
         amountOfTouches++;
         Debug.Log(amountOfTouches);
-        //PATRON OBSERVER
     }
 
     void PrimerPaso()

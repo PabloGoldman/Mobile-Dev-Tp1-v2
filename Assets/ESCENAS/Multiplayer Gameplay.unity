@@ -27780,6 +27780,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -293
       objectReference: {fileID: 0}
+    - target: {fileID: 5347541339501745235, guid: db6086bb6cb40af44868891788f049a9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -372.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347541339629337959, guid: db6086bb6cb40af44868891788f049a9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -372.99997
+      objectReference: {fileID: 0}
     - target: {fileID: 5347541339907708172, guid: db6086bb6cb40af44868891788f049a9,
         type: 3}
       propertyPath: m_Name
@@ -27899,6 +27909,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347541340171372817, guid: db6086bb6cb40af44868891788f049a9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -372.99997
       objectReference: {fileID: 0}
     - target: {fileID: 5347541341094276323, guid: db6086bb6cb40af44868891788f049a9,
         type: 3}
@@ -28227,6 +28242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controlador: {fileID: 0}
+  leftPallet: 0
   miInput: 1
   Desde: {fileID: 13040}
   Hasta: {fileID: 13041}
@@ -28641,7 +28657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &791239733
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28825,6 +28841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controlador: {fileID: 0}
+  leftPallet: 1
   miInput: 0
   Desde: {fileID: 13044}
   Hasta: {fileID: 13043}
@@ -29055,6 +29072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controlador: {fileID: 0}
+  leftPallet: 1
   miInput: 0
   Desde: {fileID: 13062}
   Hasta: {fileID: 13063}
@@ -29154,6 +29172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Controlador: {fileID: 0}
+  leftPallet: 0
   miInput: 1
   Desde: {fileID: 13017}
   Hasta: {fileID: 13016}
@@ -29529,7 +29548,7 @@ PrefabInstance:
     - target: {fileID: 2084743329156733584, guid: 01a6e0568200ffb4aa85cab9bf527fa0,
         type: 3}
       propertyPath: TiempoDeJuego
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2084743329156733584, guid: 01a6e0568200ffb4aa85cab9bf527fa0,
         type: 3}
@@ -29551,6 +29570,21 @@ PrefabInstance:
       propertyPath: ObjsCarrera.Array.data[2]
       value: 
       objectReference: {fileID: 213}
+    - target: {fileID: 2084743329156733584, guid: 01a6e0568200ffb4aa85cab9bf527fa0,
+        type: 3}
+      propertyPath: virtualJoystick.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084743329156733584, guid: 01a6e0568200ffb4aa85cab9bf527fa0,
+        type: 3}
+      propertyPath: virtualJoystick.Array.data[0]
+      value: 
+      objectReference: {fileID: 6199094853324292565}
+    - target: {fileID: 2084743329156733584, guid: 01a6e0568200ffb4aa85cab9bf527fa0,
+        type: 3}
+      propertyPath: virtualJoystick.Array.data[1]
+      value: 
+      objectReference: {fileID: 791239734}
     - target: {fileID: 2084743329156733584, guid: 01a6e0568200ffb4aa85cab9bf527fa0,
         type: 3}
       propertyPath: ObjsCalibracion1.Array.data[0]
@@ -29916,6 +29950,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -294
       objectReference: {fileID: 0}
+    - target: {fileID: 5347541339501745235, guid: db6086bb6cb40af44868891788f049a9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -372.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347541339629337959, guid: db6086bb6cb40af44868891788f049a9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -372.99997
+      objectReference: {fileID: 0}
     - target: {fileID: 5347541339907708172, guid: db6086bb6cb40af44868891788f049a9,
         type: 3}
       propertyPath: m_Name
@@ -30025,6 +30069,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5347541340171372817, guid: db6086bb6cb40af44868891788f049a9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -373
       objectReference: {fileID: 0}
     - target: {fileID: 5347541341094276323, guid: db6086bb6cb40af44868891788f049a9,
         type: 3}
@@ -30159,6 +30208,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Joystick0
       objectReference: {fileID: 0}
+    - target: {fileID: 6199094853545197396, guid: 85882ccadd32a3347936163e9ecdb007,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6199094853545197397, guid: 85882ccadd32a3347936163e9ecdb007,
         type: 3}
       propertyPath: m_Pivot.x
@@ -30266,6 +30320,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85882ccadd32a3347936163e9ecdb007, type: 3}
+--- !u!114 &6199094853324292565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6199094853545197398, guid: 85882ccadd32a3347936163e9ecdb007,
+    type: 3}
+  m_PrefabInstance: {fileID: 6199094853324292564}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867e92928a0b5094095f7b00c0fb20d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7265171151945618038
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] GameModeData gameData;
 
+    [SerializeField] VirtualJoystick[] virtualJoystick;
+
     public float TiempoDeJuego = 60;
 
     public enum EstadoJuego { Calibrando, Jugando, Finalizado }
@@ -70,6 +72,18 @@ public class GameManager : MonoBehaviour
         {
             case EstadoJuego.Calibrando:
 
+                foreach (Touch t in Input.touches)
+                {
+                    if (t.position.x < Screen.width / 2)
+                    {
+                        Player1.Seleccionado = true;
+                    }
+                    else
+                    {
+                        Player2.Seleccionado = true;
+                    }
+                }
+
                 if (Input.GetKeyDown(KeyCode.W))
                 {
                     Player1.Seleccionado = true;
@@ -82,9 +96,12 @@ public class GameManager : MonoBehaviour
 
                 break;
 
-
             case EstadoJuego.Jugando:
 
+                foreach (VirtualJoystick vj in virtualJoystick)
+                {
+                    vj.gameObject.SetActive(true);
+                }
                 //SKIP LA CARRERA
                 if (Input.GetKey(KeyCode.Alpha9))
                 {
@@ -130,6 +147,10 @@ public class GameManager : MonoBehaviour
 
             case EstadoJuego.Finalizado:
 
+                foreach (VirtualJoystick vj in virtualJoystick)
+                {
+                    vj.gameObject.SetActive(false);
+                }
                 //muestra el puntaje
 
                 TiempEspMuestraPts -= Time.deltaTime;

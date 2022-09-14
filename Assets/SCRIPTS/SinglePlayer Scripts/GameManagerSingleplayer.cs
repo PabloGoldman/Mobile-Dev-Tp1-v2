@@ -12,6 +12,8 @@ public class GameManagerSingleplayer : MonoBehaviour
 
     [SerializeField] GameModeData gameData;
 
+    [SerializeField] VirtualJoystick virtualJoystick;
+
     public float TiempoDeJuego = 60;
 
     public enum EstadoJuego { Calibrando, Jugando, Finalizado }
@@ -81,6 +83,8 @@ public class GameManagerSingleplayer : MonoBehaviour
 
             case EstadoJuego.Jugando:
 
+                virtualJoystick.gameObject.SetActive(true);
+
                 //SKIP LA CARRERA
                 if (Input.GetKey(KeyCode.Alpha9))
                 {
@@ -126,6 +130,7 @@ public class GameManagerSingleplayer : MonoBehaviour
 
             case EstadoJuego.Finalizado:
 
+                virtualJoystick.gameObject.SetActive(false);
                 //muestra el puntaje
 
                 TiempEspMuestraPts -= Time.deltaTime;
