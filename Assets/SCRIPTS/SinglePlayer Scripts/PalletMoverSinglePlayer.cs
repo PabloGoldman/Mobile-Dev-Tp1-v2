@@ -21,37 +21,34 @@ public class PalletMoverSinglePlayer : ManejoPalletsSinglePlayer
     {
         foreach (Touch t in Input.touches)
         {
-            //if (t.position.x < Screen.width / 2 && contador <= 0f && speed != 0f && PauseMenu.GameIsPaused == false)
-            //{
-            //    if (!GameManager.self.winGame)
-            //    {
-            //        speed = -speed;
-            //        contador = 80f;
-            //        transform.RotateAround(transform.position, transform.up, 180f);
-            //    }
-            //}
-
-            amountOfTouches++;
+            AddTouches();
         }
 
-        if (!Tenencia() && Desde.Tenencia() && Input.GetKeyDown(KeyCode.A) || amountOfTouches >= 5)
+        if (!Tenencia() && Desde.Tenencia() && (Input.GetKeyDown(KeyCode.A) || amountOfTouches >= 5))
         {
             Debug.Log("Primer paso done");
-            PrimerPaso();
             amountOfTouches = 0;
+            PrimerPaso();
         }
-        if (Tenencia() && Input.GetKeyDown(KeyCode.S) || amountOfTouches >= 5)
+        if (Tenencia() && (Input.GetKeyDown(KeyCode.S) || amountOfTouches >= 5) && segundoCompleto == false)
         {
             Debug.Log("Segundo paso done");
-            SegundoPaso();
             amountOfTouches = 0;
+            SegundoPaso();
         }
-        if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.D) || amountOfTouches >= 5)
+        if (segundoCompleto && Tenencia() && (Input.GetKeyDown(KeyCode.D) || amountOfTouches >= 5))
         {
             Debug.Log("Tercer paso done");
-            TercerPaso();
             amountOfTouches = 0;
+            TercerPaso();
         }
+    }
+
+    public void AddTouches()
+    {
+        amountOfTouches++;
+        Debug.Log(amountOfTouches);
+        //PATRON OBSERVER
     }
 
     void PrimerPaso()
