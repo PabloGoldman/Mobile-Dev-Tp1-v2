@@ -441,7 +441,7 @@ MonoBehaviour:
   player2WinnerImage: {fileID: 1839050058}
   finalPointsPlayer1: {fileID: 2027766513}
   finalPointsPlayer2: {fileID: 975737163}
-  TiempEspReiniciar: 15
+  TiempEspReiniciar: 10
 --- !u!1001 &74661627
 PrefabInstance:
   m_ObjectHideFlags: 0
