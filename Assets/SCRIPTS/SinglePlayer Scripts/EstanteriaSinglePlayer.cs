@@ -9,7 +9,6 @@ public class EstanteriaSinglePlayer : ManejoPalletsSinglePlayer
 	PilaPalletMng Contenido;
 	public bool Anim = false;
 
-
 	//animacion de parpadeo
 	public float Intervalo = 0.7f;
 	public float Permanencia = 0.2f;
