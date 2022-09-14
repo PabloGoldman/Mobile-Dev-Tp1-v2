@@ -1,1 +1,2 @@
-Programmer: Pablo Goldman
+Programado por: Rodrigo Corral
+Porteado por: Pablo Goldman
