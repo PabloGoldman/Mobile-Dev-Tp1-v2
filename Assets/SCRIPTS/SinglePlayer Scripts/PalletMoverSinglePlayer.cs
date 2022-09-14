@@ -44,11 +44,13 @@ public class PalletMoverSinglePlayer : ManejoPalletsSinglePlayer
         {
             Debug.Log("Segundo paso done");
             SegundoPaso();
+            amountOfTouches = 0;
         }
         if (segundoCompleto && Tenencia() && Input.GetKeyDown(KeyCode.D) || amountOfTouches >= 5)
         {
             Debug.Log("Tercer paso done");
             TercerPaso();
+            amountOfTouches = 0;
         }
     }
 
