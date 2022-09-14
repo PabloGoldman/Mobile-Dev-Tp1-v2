@@ -28,9 +28,12 @@ public class MngPts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (Touch t in Input.touches)
+        if (TiempEspReiniciar < 5)
         {
-            Managers.SceneManager.Get().ChangeScene(0);
+            foreach (Touch t in Input.touches)
+            {
+                Managers.SceneManager.Get().ChangeScene(0);
+            }
         }
 
         //PARA JUGAR
