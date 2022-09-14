@@ -52,15 +52,6 @@ public class GameManagerSingleplayer : MonoBehaviour
 
     void Update()
     {
-        var touches = Input.touches;
-
-        string log = "";
-
-        foreach (var t in touches)
-        {
-            log += $"{t.fingerId} - {t.position} ";
-        }
-
         //REINICIAR
         if (Input.GetKey(KeyCode.Alpha0))
         {
@@ -81,8 +72,12 @@ public class GameManagerSingleplayer : MonoBehaviour
                 {
                     Player1.Seleccionado = true;
                 }
-                break;
 
+                foreach (Touch t in Input.touches)
+                {
+                    Player1.Seleccionado = true;
+                }
+                break;
 
             case EstadoJuego.Jugando:
 
