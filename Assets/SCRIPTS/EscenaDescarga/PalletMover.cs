@@ -20,6 +20,12 @@ public class PalletMover : ManejoPallets
     int amountOfTouches;
     int touchesToChange = 1;
 
+    private void OnDisable()
+    {
+        primeroCompleto = false;
+        segundoCompleto = false;
+    }
+
     private void Update()
     {
         foreach (Touch t in Input.touches)

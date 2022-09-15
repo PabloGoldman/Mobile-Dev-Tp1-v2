@@ -5,6 +5,111 @@ using Managers;
 
 public class GameManager : MonoBehaviour
 {
+    public abstract class GMState
+    {
+        public abstract void Update(GameManager gm);
+    }
+
+    public class GMStateCalibrando : GMState
+    {
+        public override void Update(GameManager gm)
+        {
+            foreach (Touch t in Input.touches)
+            {
+                if (t.position.x < Screen.width / 2)
+                {
+                    gm.Player1.Seleccionado = true;
+                }
+                else
+                {
+                    gm.Player2.Seleccionado = true;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.W))
+            {
+                gm.Player1.Seleccionado = true;
+            }
+
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                gm.Player2.Seleccionado = true;
+            }
+        }
+    }
+
+    public class GMStateJugando : GMState
+    {
+        public override void Update(GameManager gm)
+        {
+            foreach (VirtualJoystick vj in gm.virtualJoystick)
+            {
+                vj.gameObject.SetActive(true);
+            }
+            //SKIP LA CARRERA
+            if (Input.GetKey(KeyCode.Alpha9))
+            {
+                gm.TiempoDeJuego = 0;
+            }
+
+            if (gm.TiempoDeJuego <= 0)
+            {
+                gm.FinalizarCarrera();
+            }
+
+            if (gm.ConteoRedresivo)
+            {
+                gm.ConteoParaInicion -= T.GetDT();
+                if (gm.ConteoParaInicion < 0)
+                {
+                    gm.EmpezarCarrera();
+                    gm.ConteoRedresivo = false;
+                }
+            }
+            else
+            {
+                //baja el tiempo del juego
+                gm.TiempoDeJuego -= T.GetDT();
+            }
+            if (gm.ConteoRedresivo)
+            {
+                if (gm.ConteoParaInicion > 1)
+                {
+                    gm.ConteoInicio.text = gm.ConteoParaInicion.ToString("0");
+                }
+                else
+                {
+                    gm.ConteoInicio.text = "GO";
+                }
+            }
+
+            gm.ConteoInicio.gameObject.SetActive(gm.ConteoRedresivo);
+
+            gm.TiempoDeJuegoText.text = gm.TiempoDeJuego.ToString("00");
+        }
+    }
+
+    public class GMStateFinalizado : GMState
+    {
+        public override void Update(GameManager gm)
+        {
+            foreach (VirtualJoystick vj in gm.virtualJoystick)
+            {
+                vj.gameObject.SetActive(false);
+            }
+            //muestra el puntaje
+
+            gm.TiempEspMuestraPts -= Time.deltaTime;
+            if (gm.TiempEspMuestraPts <= 0)
+                SceneManager.Get().ChangeScene(3);
+        }
+    }
+
+    GMState currentState = null;
+    GMStateCalibrando stateCalibrando = new GMStateCalibrando();
+    GMStateJugando stateJugando = new GMStateJugando();
+    GMStateFinalizado stateFinalizado = new GMStateFinalizado();
+
     public static GameManager Instancia;
 
     [SerializeField] GameModeData gameData;
@@ -14,8 +119,8 @@ public class GameManager : MonoBehaviour
 
     public float TiempoDeJuego = 60;
 
-    public enum EstadoJuego { Calibrando, Jugando, Finalizado }
-    public EstadoJuego EstAct = EstadoJuego.Calibrando;
+    //public enum EstadoJuego { Calibrando, Jugando, Finalizado }
+    //public EstadoJuego EstAct = EstadoJuego.Calibrando;
 
     public Player Player1;
     public Player Player2;
@@ -52,14 +157,16 @@ public class GameManager : MonoBehaviour
     IEnumerator Start()
     {
         yield return null;
-
-        
-
+        currentState = stateCalibrando;
         IniciarTutorial();
     }
 
     void Update()
     {
+        if (currentState != null)
+        {
+            currentState.Update(this);
+        }
         //REINICIAR
         if (Input.GetKey(KeyCode.Alpha0))
         {
@@ -72,105 +179,15 @@ public class GameManager : MonoBehaviour
             Application.Quit();
         }
 
-        switch (EstAct)
-        {
-            case EstadoJuego.Calibrando:
-
-                foreach (Touch t in Input.touches)
-                {
-                    if (t.position.x < Screen.width / 2)
-                    {
-                        Player1.Seleccionado = true;
-                    }
-                    else
-                    {
-                        Player2.Seleccionado = true;
-                    }
-                }
-
-                if (Input.GetKeyDown(KeyCode.W))
-                {
-                    Player1.Seleccionado = true;
-                }
-
-                if (Input.GetKeyDown(KeyCode.UpArrow))
-                {
-                    Player2.Seleccionado = true;
-                }
-
-                break;
-
-            case EstadoJuego.Jugando:
-
-                foreach (VirtualJoystick vj in virtualJoystick)
-                {
-                    vj.gameObject.SetActive(true);
-                }
-                //SKIP LA CARRERA
-                if (Input.GetKey(KeyCode.Alpha9))
-                {
-                    TiempoDeJuego = 0;
-                }
-
-                if (TiempoDeJuego <= 0)
-                {
-                    FinalizarCarrera();
-                }
-
-                if (ConteoRedresivo)
-                {
-                    ConteoParaInicion -= T.GetDT();
-                    if (ConteoParaInicion < 0)
-                    {
-                        EmpezarCarrera();
-                        ConteoRedresivo = false;
-                    }
-                }
-                else
-                {
-                    //baja el tiempo del juego
-                    TiempoDeJuego -= T.GetDT();
-                }
-                if (ConteoRedresivo)
-                {
-                    if (ConteoParaInicion > 1)
-                    {
-                        ConteoInicio.text = ConteoParaInicion.ToString("0");
-                    }
-                    else
-                    {
-                        ConteoInicio.text = "GO";
-                    }
-                }
-
-                ConteoInicio.gameObject.SetActive(ConteoRedresivo);
-
-                TiempoDeJuegoText.text = TiempoDeJuego.ToString("00");
-
-                break;
-
-            case EstadoJuego.Finalizado:
-
-                foreach (VirtualJoystick vj in virtualJoystick)
-                {
-                    vj.gameObject.SetActive(false);
-                }
-                //muestra el puntaje
-
-                TiempEspMuestraPts -= Time.deltaTime;
-                if (TiempEspMuestraPts <= 0)
-                    SceneManager.Get().ChangeScene(3);
-
-                break;
-        }
-
-        TiempoDeJuegoText.transform.parent.gameObject.SetActive(EstAct == EstadoJuego.Jugando && !ConteoRedresivo);
+        TiempoDeJuegoText.transform.parent.gameObject.SetActive(currentState == stateJugando && !ConteoRedresivo);
     }
 
     //----------------------------------------------------------//
 
     public void IniciarTutorial()
     {
+        currentState = stateCalibrando;
+
         for (int i = 0; i < ObjsCalibracion1.Length; i++)
         {
             ObjsCalibracion1[i].SetActive(true);
@@ -200,7 +217,8 @@ public class GameManager : MonoBehaviour
 
     void FinalizarCarrera()
     {
-        EstAct = GameManager.EstadoJuego.Finalizado;
+        //EstAct = GameManager.EstadoJuego.Finalizado;
+        currentState = stateFinalizado;
 
         TiempoDeJuego = 0;
 
@@ -238,7 +256,9 @@ public class GameManager : MonoBehaviour
     //cambia a modo de carrera
     void CambiarACarrera()
     {
-        EstAct = EstadoJuego.Jugando;
+        //EstAct = EstadoJuego.Jugando;
+
+        currentState = stateJugando;
 
         switch (gameData.gameMode)
         {
@@ -278,7 +298,6 @@ public class GameManager : MonoBehaviour
         {
             ObjsCalibracion2[i].SetActive(false);
         }
-
 
         //posiciona los camiones dependiendo de que lado de la pantalla esten
         if (Player1.LadoActual == Visualizacion.Lado.Izq)
