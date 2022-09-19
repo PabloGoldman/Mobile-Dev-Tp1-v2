@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Managers
 {
     public class SceneManager : MonoBehaviourSingleton<SceneManager>
@@ -10,6 +12,11 @@ namespace Managers
         public void ResetLevel()
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        }
+
+        public void QuitApplication()
+        {
+            Application.Quit();
         }
     }
 }
