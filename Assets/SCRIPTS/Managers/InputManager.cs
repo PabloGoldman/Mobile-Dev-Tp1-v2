@@ -33,7 +33,7 @@ public class InputManager : MonoBehaviourSingleton<InputManager>
 #elif UNITY_ANDROID
         return GetOrAddAxis(axis);
 #elif UNITY_STANDALONE
-        return Input.GetAxis(axis);
+        return GetOrAddAxis(axis) + Input.GetAxis(axis);
 #endif
     }
 
