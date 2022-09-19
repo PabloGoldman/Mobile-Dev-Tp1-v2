@@ -173,12 +173,6 @@ public class GameManager : MonoBehaviour
             SceneManager.Get().ResetLevel();
         }
 
-        //CIERRA LA APLICACION
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-
         TiempoDeJuegoText.transform.parent.gameObject.SetActive(currentState == stateJugando && !ConteoRedresivo);
     }
 

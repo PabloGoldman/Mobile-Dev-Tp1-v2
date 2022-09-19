@@ -145,12 +145,6 @@ public class GameManagerSingleplayer : MonoBehaviour
             currentState.Update(this);
         }
 
-        //CIERRA LA APLICACION
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-
         TiempoDeJuegoText.transform.parent.gameObject.SetActive(currentState == stateJugando && !ConteoRedresivo);
     }
 

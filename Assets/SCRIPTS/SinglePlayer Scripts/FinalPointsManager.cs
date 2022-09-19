@@ -24,12 +24,6 @@ public class FinalPointsManager : MonoBehaviour
 			SceneManager.Get().ChangeScene(0);
 		}
 
-		//CIERRA LA APLICACION
-		if (Input.GetKeyDown(KeyCode.Escape))
-		{
-			Application.Quit();
-		}
-
 		TiempEspReiniciar -= Time.deltaTime;
 		if (TiempEspReiniciar <= 0)
 		{
